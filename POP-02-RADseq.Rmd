@@ -12,7 +12,7 @@ cite_options(citation_format = "pandoc", max.names = 3, style = "html",
 ---
 title: 'RADseq'
 subtitle: '*Katherine Silliman, Danielle Davenport*'
-bibliography: RCN_site-Nov05.bib
+bibliography: common-bib_bib_01.bib
 ---
 
 ```{r setup, include=FALSE}

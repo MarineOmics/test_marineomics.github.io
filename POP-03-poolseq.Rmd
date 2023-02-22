@@ -2,7 +2,7 @@
 title: "PoPoolation Pipeline"
 subtitle: '*Joanna Griffiths*'
 date: "8/12/2021"
-bibliography: RCN_site-Nov05.bib
+bibliography: common-bib_01.bib
 ---
 
 ```{r setup, include=FALSE}

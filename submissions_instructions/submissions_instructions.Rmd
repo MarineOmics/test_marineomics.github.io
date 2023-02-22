@@ -1,6 +1,6 @@
 ---
 title: "Instructions for developing new pages for the MarineOmics webpage"
-bibliography: "RCN_site-Nov05.bib"
+bibliography: "common-bib_01.bib"
 editor_options: 
   markdown: 
     wrap: 72
@@ -197,16 +197,16 @@ In-text citations can be made throughout the document that will
 automatically add a reference to your reference section via the
 following steps: <br>
 
--   add your citations to the RCN_site-Nov05.bib document by exporting
+-   add your citations to the common-bib_01.bib document by exporting
     BibTeX-formatted citations from your reference manager
--   add the line 'bibliography: RCN_site-Nov05.bib' to your header at
+-   add the line 'bibliography: common-bib_01.bib' to your header at
     the top of the .Rmd document, which looks like this:
 
 <!-- -->
 
     ---
     title: "Instructions for developing new pages for the MarineOmics webpage"
-    bibliography: RCN_site-Nov05.bib
+    bibliography: common-bib_01.bib
     ---
 
 -   include the 'cite-options' chunk in your 'setup' code chunk. See the

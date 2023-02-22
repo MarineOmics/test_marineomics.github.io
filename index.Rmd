@@ -14,12 +14,12 @@ Based on the expertise of the MarineOmics working group, the first topics includ
 ### Topics {.tabset .tabset-fade .tabset-pills}
 #### Population Genomics  
 
-* [Choosing a population genomics sequencing approach](choosing-population-genetics.html)  
-* [Whole Genome Resequencing (WGS)](WGS_intro.html)  
+* [Choosing a population genomics sequencing approach](POP-01-choosing-population-genetics.html)  
+* [Whole Genome Resequencing (WGS)](POP-04-WGS_intro.html)  
   * [Low coverage WGS](https://github.com/therkildsen-lab/genomic-data-analysis/blob/master/lcwgs_data_analysis.md)
-* [Reduced Representation Sequencing](RADseq.html) 
-* [Poolseq](poolseq.html)
-* [Redundancy Analysis (RDA) Trait Prediction](RDAtraitPredictionTutorial.html)
+* [Reduced Representation Sequencing](POP-02-RADseq.html) 
+* [Poolseq](POP-03-poolseq.html)
+* [Redundancy Analysis (RDA) Trait Prediction](POP-RDAtraitPredictionTutorial.html)
 
 #### Functional Genomics  
 
