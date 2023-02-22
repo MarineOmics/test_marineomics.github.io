@@ -14,3 +14,5 @@
 - all files in `RAD_data` dir need to be moved to `POP-02-RADseq_files` and links there in corrected
 
 - all files in `rda_tutorial` dir need to be moved to `POP-05-RDAtraitPredictionTutorial_files` and links there in corrected
+
+- place `totalmissing` in correct dir
