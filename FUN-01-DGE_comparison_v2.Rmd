@@ -154,7 +154,7 @@ Now let's first plot the distribution of unfiltered reads from our dataset:
 ```{r, message = FALSE, warning = FALSE}
 
 # Read in matrix of RSEM expected read counts
-data <- read.delim("RNA_data/GE2_expected_counts_gene.matrix", sep = "\t", header = T, row.names = 1)
+data <- read.delim("FUN-01-DGE_comparison_v2_files/RNA_data/GE2_expected_counts_gene.matrix", sep = "\t", header = T, row.names = 1)
 
 # Peak at data to check that it looks okay
 head(data)
