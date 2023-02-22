@@ -1,7 +1,7 @@
 ---
 title: "Fitting Multifactorial Models of Differential Expression"
 subtitle: '*Samuel N. Bogan*'
-bibliography: DGE_Comp.bib
+bibliography: FUN-01-DGE_comparison_v2_files/DGE_Comp.bib
 ---
 
 # Intro to multifactorial RNA-seq models  
