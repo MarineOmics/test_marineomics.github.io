@@ -19,11 +19,11 @@ Based on the expertise of the MarineOmics working group, the first topics includ
   * [Low coverage WGS](https://github.com/therkildsen-lab/genomic-data-analysis/blob/master/lcwgs_data_analysis.md)
 * [Reduced Representation Sequencing](POP-02-RADseq.html) 
 * [Poolseq](POP-03-poolseq.html)
-* [Redundancy Analysis (RDA) Trait Prediction](POP-RDAtraitPredictionTutorial.html)
+* [Redundancy Analysis (RDA) Trait Prediction](POP-05-RDAtraitPredictionTutorial.html)
 
 #### Functional Genomics  
 
-* [Multifactorial RNAseq analyses](DGE_comparison_v2.html)  
+* [Multifactorial RNAseq analyses](FUN-01-DGE_comparison_v2.html)  
 * Align and count RNAseq reads (coming soon!)
     * De novo, reference-based, and Tag-seq methods
 
