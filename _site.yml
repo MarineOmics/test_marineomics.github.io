@@ -3,10 +3,10 @@ output_dir: "."
 navbar:
   type: inverse
   title: "MarineOmics"
-  href: ADMIN_01_index.html
+  href: index.html
   left:
     - text: "Contributions"
-      href: ADMIN_02_contributions/ADMIN_02_contributions.html  
+      href: ADMIN_02_contributions.html  
     - text: "Panel Seminars"
       href: panels.html 
     - text: "Population Genomics"
