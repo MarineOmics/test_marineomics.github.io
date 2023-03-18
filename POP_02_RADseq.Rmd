@@ -12,7 +12,7 @@ cite_options(citation_format = "pandoc", max.names = 3, style = "html",
 ---
 title: 'RADseq'
 subtitle: '*Katherine Silliman, Danielle Davenport*'
-bibliography: POP_02_RADseq/common-bib_01.bib
+bibliography: POP_02_RADseq_files/common-bib_01.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -190,7 +190,7 @@ There are a number of freely available pipelines for processing RADseq data, wit
 Some groups have also developed pipelines for specific flavors of RAD (e.g., [Matz lab for 2b-RAD](https://github.com/z0on/2bRAD_denovo/blob/master/2bRAD_README.sh)) or proprietary software (eg, [DARTseq](http://georges.biomatix.org/storage/app/media/uploaded-files/dartR_Workbook.pdf)). **In most cases, it is recommended that you use a pipeline developed and tested for RAD data, especially if you are making a de novo assembly.** [@LaCava2020-bg] have an excellent study where they review various *de novo* assemblers that are used in these pipelines. Assemblers that were not explicitly developed for short reads (eg, Velvet, ABySS) performed very poorly, while CD-HIT (the assembler in dDocent) performed the best. Stacks/Stacks2 and vsearch (the assembler in ipyrad) both performed worse when analyzing simulated data with indels. It should be noted that all of these RAD pipelines have optimized the specific parameters of these de novo assemblers to work with RAD data of various flavors, which may not be fully reflected in the LaCava study.  
 
 Based on the MarineOmics RAD panel, the general consensus is that all the popular pipelines can produce adequately accurate datasets (with appropriate parameter optimization and data filtering).     
-![Table 3 from LaCava et al 2019. CD-HIT is used in dDocent, VSEARCH is used in ipyrad.](POP_02_RADseq/lacavaTable3.png)
+![Table 3 from LaCava et al 2019. CD-HIT is used in dDocent, VSEARCH is used in ipyrad.](POP_02_RADseq_files/lacavaTable3.png)
 
 
 ## Evaluate potential sources of error {#error}
@@ -205,8 +205,8 @@ For the code examples in this section, we primarily make use of the R package Se
 First, we need to convert our VCF file into the GDS format. We will do this once here, then use the GDS file for subsequent code examples.
 ```{r}
 filename = "OL_subset" #replace with y our file name 
-filename.gds = paste0("POP_02_RADseq/", paste0(filename, ".gds"))
-filename.vcf = paste0("POP_02_RADseq/", paste0(filename, ".vcf"))
+filename.gds = paste0("POP_02_RADseq_files/", paste0(filename, ".gds"))
+filename.vcf = paste0("POP_02_RADseq_files/", paste0(filename, ".vcf"))
   # 1 . Convert VCF to GDS
 SeqArray::seqVCF2GDS(vcf.fn = filename.vcf, out.fn = filename.gds, storage.option="ZIP_RA")
 gdsin = SeqArray::seqOpen(filename.gds)
@@ -219,7 +219,7 @@ STRATA: sampling location/population
 PLATE: sequencing batch  
 Next we read in our metadata file, and make sure the samples are in the same order as your VCF file:  
 ```{r, eval = T}
-metafile = "POP_02_RADseq/OL.popmap"
+metafile = "POP_02_RADseq_files/OL.popmap"
 sample.ids = seqGetData(gdsin, "sample.id")
 sample.strata =  read.table(metafile, header = T, sep = "\t") %>%
                   dplyr::select(ID, STRATA, PLATE)
@@ -251,16 +251,16 @@ Another common method of filtering and evaluating you data without ever using R 
 
 **Missingness with vcftools, on the command line**  
 ```{bash, eval = T}
-vcftools --vcf POP_02_RADseq/OL_subset.vcf --missing-indv --out POP_02_RADseq/OL_subset
+vcftools --vcf POP_02_RADseq_files/OL_subset.vcf --missing-indv --out POP_02_RADseq_files/OL_subset
 # sort the file by most missing data and print the top 10 samples  
-cat POP_02_RADseq/OL_subset.imiss | (read h; echo "$h"; sort -k5 -r) 
+cat POP_02_RADseq_files/OL_subset.imiss | (read h; echo "$h"; sort -k5 -r) 
 ```
 You can open the file analysis/OL_subset.imiss in any text editor an look at the missingness values by eye.  
 
 To plot the missingness on the command line, you can use gnuplot:
 ```{bash, eval = T}
 #code from Jon Puritz
-mawk '!/IN/' POP_02_RADseq/OL_subset.imiss | cut -f5 > totalmissing
+mawk '!/IN/' POP_02_RADseq_files/OL_subset.imiss | cut -f5 > totalmissing
 gnuplot << \EOF
 set terminal dumb size 120, 30
 set autoscale
@@ -299,7 +299,7 @@ Here we use _SeqArray_ and _SNPRelate_ to run a PCA in R.
 
 ```{r}
 #open the gds file previously created, if not already open
-#filename.gds = "POP_02_RADseq/OL_subset.gds" #replace with your file name 
+#filename.gds = "POP_02_RADseq_files/OL_subset.gds" #replace with your file name 
 #gdsin = SeqArray::seqOpen(filename.gds)
 # exclude samples previously identified as having too much missing data
 bad_samples = c("OR3_13_C3","CA4_12_C1","OR3_3_C7","CA4_13_C1","BC2_6_C2","BC2_9_C4")
@@ -533,7 +533,7 @@ To save your filtered GDS object as a VCF in SeqArray:
 seqSetFilter(gdsin, sample.id=keep,variant.id=snp.id.allfilt)
 
 # convert to vcf
-seqGDS2VCF(gdsin, "POP_02_RADseq/OL-miss-pc1-linkage-filt.vcf.gz")
+seqGDS2VCF(gdsin, "POP_02_RADseq_files/OL-miss-pc1-linkage-filt.vcf.gz")
 
 #close the gds file to save memory
 closefn.gds(gdsin)

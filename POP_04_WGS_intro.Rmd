@@ -1,5 +1,5 @@
 ---
-bibliography: POP_04_WGS_intro/common-bib_01.bib
+bibliography: POP_04_WGS_intro_files/common-bib_01.bib
 title:  Whole Genome Resequencing for Population Genomics 
 subtitle: '*Katherine Silliman, Nicolas Lou*'
 ---

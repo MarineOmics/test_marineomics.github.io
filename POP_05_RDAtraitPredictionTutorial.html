@@ -497,10 +497,10 @@ frequency based on the 1000 sampled individuals
 more phenotypes <code>causal</code>.</p>
 <p>Note that you will have to change the working directory to where the
 data is stored on your computer.</p>
-<pre class="r"><code>G &lt;- read.table(unz(&quot;POP_05_RDAtraitPredictionTutorial/Genotypes.txt.zip&quot;, &quot;Genotypes.txt&quot;))
+<pre class="r"><code>G &lt;- read.table(unz(&quot;POP_05_RDAtraitPredictionTutorial_files/Genotypes.txt.zip&quot;, &quot;Genotypes.txt&quot;))
 dim(G) # 1000 individuals and 26371 loci</code></pre>
 <pre><code>## [1]  1000 26371</code></pre>
-<pre class="r"><code>ind &lt;- read.table(&quot;POP_05_RDAtraitPredictionTutorial/Individuals.txt&quot;, header=TRUE)
+<pre class="r"><code>ind &lt;- read.table(&quot;POP_05_RDAtraitPredictionTutorial_files/Individuals.txt&quot;, header=TRUE)
 dim(ind) #corresponds to rows in G</code></pre>
 <pre><code>## [1] 1000   15</code></pre>
 <pre class="r"><code>head(ind)</code></pre>
@@ -509,7 +509,7 @@ dim(ind) #corresponds to rows in G</code></pre>
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["ind_index"],"name":[1],"type":["int"],"align":["right"]},{"label":["x"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["y"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["phenotype1_mat"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["phenotype2_MTWetQ"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["phenotype3_MTDQ"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["phenotype4_PDM"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["phenotype5_PwarmQ"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["phenotype6_PWM"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["env1_mat"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["env2_MTWetQ"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["env3_MTDQ"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["env4_PDM"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["env5_PwarmQ"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["env6_PWM"],"name":[15],"type":["dbl"],"align":["right"]}],"data":[{"1":"33","2":"0.4061840","3":"0.233272","4":"0.7379670","5":"-0.1914210","6":"0.142992","7":"-0.131894","8":"-0.452497","9":"-0.5416510","10":"0.762432","11":"-0.1622380","12":"0.2612810","13":"-0.332078","14":"-0.471502","15":"-0.4778210","_rn_":"1"},{"1":"34","2":"0.4256970","3":"0.837158","4":"-0.2740810","5":"-0.4283320","6":"-0.012880","7":"0.221058","8":"0.229296","9":"0.0665969","10":"-0.339330","11":"-0.4076670","12":"-0.0582962","13":"0.288030","14":"0.198810","15":"0.0176800","_rn_":"2"},{"1":"44","2":"0.6716730","3":"0.581744","4":"-0.6763260","5":"0.0866287","6":"-0.470671","7":"0.218813","8":"0.260098","9":"-0.1034650","10":"-0.567733","11":"0.0909278","12":"-0.4143530","13":"0.234899","14":"0.230255","15":"-0.0535109","_rn_":"3"},{"1":"45","2":"0.0174659","3":"0.329922","4":"-0.2832210","5":"-0.4039420","6":"-0.333718","7":"-0.200554","8":"-0.345915","9":"-0.4100010","10":"-0.245860","11":"-0.2007590","12":"-0.2674550","13":"-0.265260","14":"-0.389828","15":"-0.4589790","_rn_":"4"},{"1":"46","2":"0.0697436","3":"0.121221","4":"0.0576163","5":"-0.3032010","6":"0.731600","7":"0.195679","8":"-0.367110","9":"0.1962960","10":"-0.121500","11":"-0.3063790","12":"0.7028580","13":"0.211275","14":"-0.352307","15":"0.2127510","_rn_":"5"},{"1":"64","2":"0.1433610","3":"0.233237","4":"0.2656280","5":"-0.2318730","6":"0.214004","7":"-0.239776","8":"-0.517086","9":"-0.2582660","10":"0.103057","11":"-0.2863170","12":"0.1657060","13":"-0.190813","14":"-0.476650","15":"-0.2927740","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<pre class="r"><code>muts &lt;-  read.table(&quot;POP_05_RDAtraitPredictionTutorial/SNPs.txt&quot;, header=TRUE)
+<pre class="r"><code>muts &lt;-  read.table(&quot;POP_05_RDAtraitPredictionTutorial_files/SNPs.txt&quot;, header=TRUE)
 dim(muts) #corresponds to columns in G</code></pre>
 <pre><code>## [1] 26371     5</code></pre>
 <pre class="r"><code>head(muts)</code></pre>
@@ -854,20 +854,43 @@ built:</p>
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] gplots_3.1.3    lfmm_1.1        LEA_3.10.2      vegan_2.6-4    
-## [5] lattice_0.20-45 permute_0.9-7  
+##  [1] gplots_3.1.3         lfmm_1.1             LEA_3.10.2          
+##  [4] vegan_2.6-4          lattice_0.20-45      permute_0.9-7       
+##  [7] SNPRelate_1.32.2     SeqArray_1.38.0      gdsfmt_1.34.0       
+## [10] lubridate_1.9.2      forcats_1.0.0        stringr_1.5.0       
+## [13] dplyr_1.1.0          purrr_1.0.1          readr_2.1.4         
+## [16] tidyr_1.3.0          tibble_3.1.8         ggplot2_3.4.1       
+## [19] tidyverse_2.0.0      BiocManager_1.30.19  kableExtra_1.3.4    
+## [22] knitcitations_1.0.12 knitr_1.42          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.10        highr_0.10         bslib_0.4.2        compiler_4.2.2    
-##  [5] jquerylib_0.1.4    bitops_1.0-7       iterators_1.0.14   tools_4.2.2       
-##  [9] digest_0.6.31      jsonlite_1.8.4     evaluate_0.20      nlme_3.1-162      
-## [13] mgcv_1.8-41        rlang_1.0.6        Matrix_1.5-3       foreach_1.5.2     
-## [17] cli_3.6.0          rstudioapi_0.14    yaml_2.3.7         parallel_4.2.2    
-## [21] xfun_0.37          fastmap_1.1.0      cluster_2.1.4      knitr_1.42        
-## [25] sass_0.4.5         vctrs_0.5.2        gtools_3.9.4       caTools_1.18.2    
-## [29] grid_4.2.2         R6_2.5.1           rmarkdown_2.20     codetools_0.2-19  
-## [33] htmltools_0.5.4    MASS_7.3-58.2      splines_4.2.2      KernSmooth_2.23-20
-## [37] cachem_1.0.6</code></pre>
+##  [1] nlme_3.1-162           bitops_1.0-7           webshot_0.5.4         
+##  [4] httr_1.4.4             GenomeInfoDb_1.34.9    tools_4.2.2           
+##  [7] backports_1.4.1        bslib_0.4.2            utf8_1.2.3            
+## [10] R6_2.5.1               KernSmooth_2.23-20     BiocGenerics_0.44.0   
+## [13] mgcv_1.8-41            colorspace_2.1-0       withr_2.5.0           
+## [16] tidyselect_1.2.0       compiler_4.2.2         cli_3.6.0             
+## [19] rvest_1.0.3            xml2_1.3.3             labeling_0.4.2        
+## [22] sass_0.4.5             caTools_1.18.2         scales_1.2.1          
+## [25] systemfonts_1.0.4      digest_0.6.31          rmarkdown_2.20        
+## [28] svglite_2.1.1          XVector_0.38.0         pkgconfig_2.0.3       
+## [31] htmltools_0.5.4        bibtex_0.5.1           fastmap_1.1.0         
+## [34] highr_0.10             rlang_1.0.6            rstudioapi_0.14       
+## [37] jquerylib_0.1.4        generics_0.1.3         farver_2.1.1          
+## [40] jsonlite_1.8.4         gtools_3.9.4           RCurl_1.98-1.10       
+## [43] magrittr_2.0.3         GenomeInfoDbData_1.2.9 Matrix_1.5-3          
+## [46] Rcpp_1.0.10            munsell_0.5.0          S4Vectors_0.36.1      
+## [49] fansi_1.0.4            RefManageR_1.4.0       lifecycle_1.0.3       
+## [52] stringi_1.7.12         yaml_2.3.7             MASS_7.3-58.2         
+## [55] zlibbioc_1.44.0        plyr_1.8.8             grid_4.2.2            
+## [58] parallel_4.2.2         crayon_1.5.2           Biostrings_2.66.0     
+## [61] splines_4.2.2          hms_1.1.2              pillar_1.8.1          
+## [64] GenomicRanges_1.50.2   codetools_0.2-19       stats4_4.2.2          
+## [67] glue_1.6.2             evaluate_0.20          foreach_1.5.2         
+## [70] png_0.1-8              vctrs_0.5.2            tzdb_0.3.0            
+## [73] gtable_0.3.1           cachem_1.0.6           xfun_0.37             
+## [76] viridisLite_0.4.1      iterators_1.0.14       IRanges_2.32.0        
+## [79] cluster_2.1.4          timechange_0.2.0       ellipsis_0.3.2</code></pre>
 </div>
 
 

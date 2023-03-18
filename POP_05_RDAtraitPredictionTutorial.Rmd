@@ -73,16 +73,16 @@ Note that you will have to change the working directory to where the data is sto
 ```{r load data}
 
 
-G <- read.table(unz("POP_05_RDAtraitPredictionTutorial/Genotypes.txt.zip", "Genotypes.txt"))
+G <- read.table(unz("POP_05_RDAtraitPredictionTutorial_files/Genotypes.txt.zip", "Genotypes.txt"))
 dim(G) # 1000 individuals and 26371 loci
 
 
 
-ind <- read.table("POP_05_RDAtraitPredictionTutorial/Individuals.txt", header=TRUE)
+ind <- read.table("POP_05_RDAtraitPredictionTutorial_files/Individuals.txt", header=TRUE)
 dim(ind) #corresponds to rows in G
 head(ind)
 
-muts <-  read.table("POP_05_RDAtraitPredictionTutorial/SNPs.txt", header=TRUE)
+muts <-  read.table("POP_05_RDAtraitPredictionTutorial_files/SNPs.txt", header=TRUE)
 dim(muts) #corresponds to columns in G
 head(muts)
 

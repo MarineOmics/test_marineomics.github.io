@@ -1,8 +1,7 @@
 knitr
 knitcitations
 kableExtra
-gdsfmt
-SeqArray
+BiocManager
 tidyverse
 ggplot2
 tibble
@@ -13,4 +12,6 @@ dplyr
 stringr
 forcats
 lubridate
+gdsfmt
+SeqArray
 SNPRelate

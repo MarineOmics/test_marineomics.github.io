@@ -12,3 +12,6 @@ dplyr
 stringr
 forcats
 lubridate
+gdsfmt
+SeqArray
+SNPRelate

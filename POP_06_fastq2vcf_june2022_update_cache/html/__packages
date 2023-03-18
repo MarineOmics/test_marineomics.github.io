@@ -12,6 +12,9 @@ dplyr
 stringr
 forcats
 lubridate
+gdsfmt
+SeqArray
+SNPRelate
 permute
 lattice
 vegan
