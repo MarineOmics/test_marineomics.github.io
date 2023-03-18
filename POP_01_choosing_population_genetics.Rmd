@@ -1,5 +1,5 @@
 ---
-bibliography: POP_01_choosing_population_genetics/common-bib_01.bib
+bibliography: POP_01_choosing_population_genetics_files/common-bib_01.bib
 title: Choosing a Population Genomics Approach
 ---
 
@@ -72,7 +72,7 @@ kbl(text_tbl) %>%
 ```
 
 # Recommended readings  
-Below we list a number of great review articles and empirical comparison studies that can help when making the decision. This topic was also discussed during the [MarineOmics seminars](https://marineomics.github.io/panels.html).  
+Below we list a number of great review articles and empirical comparison studies that can help when making the decision. This topic was also discussed during the [MarineOmics seminars](https://marineomics.github.io/ADMIN_03_panels.html).  
 
 Review articles:
 
@@ -88,10 +88,10 @@ Empirical comparisons:
 # MarineOmics Guidelines
 Presently, our site covers four approaches:
 
-* [RADseq](POP_02_RADseq/POP_02_RADseq.html)  
-* [hcWGS](POP_04_WGS_intro/POP_04_WGS_intro.html)
+* [RADseq](POP_02_RADseq.html)  
+* [hcWGS](POP_04_WGS_intro.html)
 * [lcWGS, maintained by MarineOmics member Nicolas Lou](https://github.com/therkildsen-lab/genomic-data-analysis/blob/master/lcwgs_data_analysis.md)
-* [Poolseq](POP_03_poolseq/POP_03_poolseq.html)
+* [Poolseq](POP_03_poolseq.html)
 
 
 For each approach, we provide guiding principles and tutorials for bioinformatic processing from raw data to genotypes. While we currently don't discuss library preparation methods in depth, we do include advice on how to organize your sequencing runs in order to improve quality control downstream.  

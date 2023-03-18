@@ -14,16 +14,16 @@ Based on the expertise of the MarineOmics working group, the first topics includ
 ### Topics {.tabset .tabset-fade .tabset-pills}
 #### Population Genomics  
 
-* [Choosing a population genomics sequencing approach](POP_01_choosing_population_genetics/POP_01_choosing_population_genetics.html)  
-* [Whole Genome Resequencing (WGS)](POP_04_WGS_intro/POP_04_WGS_intro.html)  
+* [Choosing a population genomics sequencing approach](POP_01_choosing_population_genetics.html)  
+* [Whole Genome Resequencing (WGS)](POP_04_WGS_intro.html)  
   * [Low coverage WGS](https://github.com/therkildsen-lab/genomic-data-analysis/blob/master/lcwgs_data_analysis.md)
-* [Reduced Representation Sequencing](POP_02_RADseq/POP_02_RADseq.html) 
-* [Poolseq](POP_03_poolseq/POP_03_poolseq.html)
-* [Redundancy Analysis (RDA) Trait Prediction](POP_05_RDAtraitPredictionTutorial/POP_05_RDAtraitPredictionTutorial.html)
+* [Reduced Representation Sequencing](POP_02_RADseq.html) 
+* [Poolseq](POP_03_poolseq.html)
+* [Redundancy Analysis (RDA) Trait Prediction](POP_05_RDAtraitPredictionTutorial.html)
 
 #### Functional Genomics  
 
-* [Multifactorial RNAseq analyses](FUN_01_DGE_comparison_v2/FUN_01_DGE_comparison_v2.html)  
+* [Multifactorial RNAseq analyses](FUN_01_DGE_comparison_v2.html)  
 * Align and count RNAseq reads (coming soon!)
     * De novo, reference-based, and Tag-seq methods
 
